@@ -1,0 +1,656 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to educational green forest theme for IT students (15-20 years) */
+  /* Soft beige-green background #EBEBDC */
+  --background: oklch(0.92 0.02 85);
+  /* Dark green text #2C3E2F */
+  --foreground: oklch(0.25 0.05 120);
+  /* Slightly lighter beige for cards */
+  --card: oklch(0.95 0.015 85);
+  --card-foreground: oklch(0.25 0.05 120);
+  --popover: oklch(0.94 0.015 85);
+  --popover-foreground: oklch(0.25 0.05 120);
+  /* Forest green primary #3D582F */
+  --primary: oklch(0.35 0.08 120);
+  --primary-foreground: oklch(0.95 0.015 85);
+  /* Muted green tones */
+  --secondary: oklch(0.88 0.02 85);
+  --secondary-foreground: oklch(0.3 0.05 120);
+  --muted: oklch(0.9 0.02 85);
+  --muted-foreground: oklch(0.45 0.03 120);
+  /* Replaced harsh teal with warm golden-orange #D4A574 for better harmony */
+  --accent: oklch(0.7 0.08 65);
+  --accent-foreground: oklch(0.25 0.05 120);
+  --destructive: oklch(0.55 0.18 15);
+  --destructive-foreground: oklch(0.95 0.015 85);
+  /* Subtle green borders */
+  --border: oklch(0.85 0.02 85);
+  --input: oklch(0.9 0.02 85);
+  --ring: oklch(0.65 0.15 180);
+  --chart-1: oklch(0.35 0.08 120);
+  --chart-2: oklch(0.65 0.15 180);
+  --chart-3: oklch(0.4 0.1 140);
+  --chart-4: oklch(0.6 0.12 100);
+  --chart-5: oklch(0.5 0.1 160);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.93 0.02 85);
+  --sidebar-foreground: oklch(0.25 0.05 120);
+  --sidebar-primary: oklch(0.35 0.08 120);
+  --sidebar-primary-foreground: oklch(0.95 0.015 85);
+  --sidebar-accent: oklch(0.65 0.15 180);
+  --sidebar-accent-foreground: oklch(0.25 0.05 120);
+  --sidebar-border: oklch(0.85 0.02 85);
+  --sidebar-ring: oklch(0.65 0.15 180);
+}
+
+.dark {
+  /* Enhanced dark mode with forest green theme - eye-friendly for coding */
+  /* Deep forest background for reduced eye strain */
+  --background: oklch(0.08 0.03 120);
+  /* Made text much brighter and clearer for better visibility */
+  --foreground: oklch(0.98 0.005 85);
+  /* Slightly lighter forest for cards */
+  --card: oklch(0.12 0.03 120);
+  /* Made card text much brighter and clearer */
+  --card-foreground: oklch(0.98 0.005 85);
+  --popover: oklch(0.12 0.03 120);
+  /* Made popover text much brighter and clearer */
+  --popover-foreground: oklch(0.98 0.005 85);
+  /* Brighter forest green for primary elements */
+  --primary: oklch(0.55 0.12 120);
+  --primary-foreground: oklch(0.08 0.03 120);
+  /* Muted dark green tones */
+  --secondary: oklch(0.15 0.03 120);
+  /* Made secondary text much brighter and clearer */
+  --secondary-foreground: oklch(0.98 0.005 85);
+  --muted: oklch(0.13 0.03 120);
+  /* Made muted text brighter for better readability */
+  --muted-foreground: oklch(0.85 0.01 85);
+  /* Warmer golden accent for dark mode */
+  --accent: oklch(0.75 0.1 60);
+  --accent-foreground: oklch(0.08 0.03 120);
+  --destructive: oklch(0.65 0.2 15);
+  /* Made destructive text much brighter and clearer */
+  --destructive-foreground: oklch(0.98 0.005 85);
+  /* Subtle green borders for dark mode */
+  --border: oklch(0.18 0.03 120);
+  --input: oklch(0.15 0.03 120);
+  --ring: oklch(0.75 0.18 180);
+  --chart-1: oklch(0.55 0.12 120);
+  --chart-2: oklch(0.75 0.18 180);
+  --chart-3: oklch(0.6 0.15 140);
+  --chart-4: oklch(0.7 0.15 100);
+  --chart-5: oklch(0.65 0.12 160);
+  --sidebar: oklch(0.12 0.03 120);
+  --sidebar-foreground: oklch(0.98 0.005 85);
+  --sidebar-primary: oklch(0.55 0.12 120);
+  --sidebar-primary-foreground: oklch(0.08 0.03 120);
+  --sidebar-accent: oklch(0.75 0.18 180);
+  --sidebar-accent-foreground: oklch(0.08 0.03 120);
+  --sidebar-border: oklch(0.18 0.03 120);
+  --sidebar-ring: oklch(0.75 0.18 180);
+}
+
+/* Added Cairo font configuration for Arabic support */
+@theme inline {
+  --font-sans: var(--font-cairo);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Faster transitions for youth appeal */
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backdrop-filter: blur(2px);
+    /* Ensure full page coverage in dark mode */
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  /* Enhanced scrollbar with vibrant green theme */
+  ::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50 rounded-full;
+    border: 2px solid var(--border);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/80 rounded-full;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(var(--primary), 0.6);
+  }
+
+  /* Stronger focus styles for better interaction feedback */
+  *:focus-visible {
+    @apply outline-3 outline-offset-3 outline-primary;
+    box-shadow: 0 0 0 6px rgba(var(--primary), 0.4), 0 0 40px rgba(var(--primary), 0.3);
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Ensure all elements inherit dark mode properly */
+  html.dark,
+  html.dark body,
+  html.dark * {
+    color-scheme: dark;
+  }
+}
+
+/* Stronger animations for youth engagement */
+@layer components {
+  .animate-fade-in {
+    animation: fadeInStrong 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUpStrong 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleInStrong 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  .animate-bounce-strong {
+    animation: bounceStrong 2s ease-in-out infinite;
+  }
+
+  .animate-wiggle-strong {
+    animation: wiggleStrong 1s ease-in-out infinite;
+  }
+
+  .animate-glow-strong {
+    animation: glowStrong 2s ease-in-out infinite alternate;
+  }
+
+  .animate-pulse-strong {
+    animation: pulseStrong 1.5s ease-in-out infinite;
+  }
+
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  .animate-zoom-in {
+    animation: zoomIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* More dynamic card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+    transform: translateY(0) scale(1) rotateX(0);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1), 0 6px 12px -4px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(16px) saturate(130%);
+    background: rgba(var(--card), 0.95);
+    border: 2px solid rgba(var(--border), 0.8);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-20px) scale(1.08) rotateX(3deg);
+    box-shadow: 0 50px 100px -16px rgba(var(--primary), 0.3), 0 0 60px rgba(var(--primary), 0.15), inset 0 2px 0
+      rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(32px) saturate(160%);
+    background: rgba(var(--card), 1);
+    border: 2px solid rgba(var(--primary), 0.6);
+  }
+
+  /* More energetic button effects */
+  .btn-interactive {
+    @apply transition-all duration-200 ease-out;
+    transform: scale(1) rotateZ(0);
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-interactive::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.3s;
+  }
+
+  .btn-interactive:hover::before {
+    left: 100%;
+  }
+
+  .btn-interactive:hover {
+    transform: scale(1.15) rotateZ(1deg);
+    box-shadow: 0 25px 50px -12px rgba(var(--primary), 0.4), 0 0 30px rgba(var(--primary), 0.2);
+  }
+
+  .btn-interactive:active {
+    transform: scale(0.95) rotateZ(-1deg);
+    transition-duration: 0.1s;
+  }
+
+  /* More vibrant gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--primary), var(--accent), var(--primary));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShiftStrong 3s ease-in-out infinite;
+  }
+
+  /* More dynamic floating animation */
+  .float {
+    animation: floatStrong 3s ease-in-out infinite;
+  }
+
+  /* Stronger pulse effect */
+  .pulse-glow {
+    animation: pulseGlowStrong 2s ease-in-out infinite;
+  }
+
+  /* More dramatic morphing */
+  .morph {
+    animation: morphStrong 6s ease-in-out infinite;
+  }
+
+  /* Faster shimmer effect */
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(var(--primary), 0.3), transparent);
+    background-size: 300% 100%;
+    animation: shimmerStrong 2s infinite;
+  }
+
+  /* Enhanced glass morphism utility */
+  .glass {
+    backdrop-filter: blur(24px) saturate(150%);
+    background: rgba(var(--card), 0.9);
+    border: 2px solid rgba(var(--border), 0.6);
+  }
+
+  /* Stronger text shadow */
+  .text-shadow {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  /* More dynamic gradient background */
+  .gradient-bg {
+    background: linear-gradient(135deg, var(--background), var(--muted), var(--secondary), var(--background));
+    background-size: 400% 400%;
+    animation: gradientBgStrong 10s ease infinite;
+  }
+
+  /* More dramatic icon effects */
+  .icon-hover {
+    @apply transition-all duration-200 ease-out;
+    transform: scale(1) rotate(0deg);
+  }
+
+  .icon-hover:hover {
+    transform: scale(1.4) rotate(15deg);
+    filter: drop-shadow(0 0 15px rgba(var(--primary), 0.6));
+  }
+
+  /* Faster stagger animations */
+  .stagger-item {
+    animation: fadeInStrong 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+  }
+
+  .stagger-item:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  .stagger-item:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .stagger-item:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+  .stagger-item:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+  .stagger-item:nth-child(5) {
+    animation-delay: 0.25s;
+  }
+  .stagger-item:nth-child(6) {
+    animation-delay: 0.3s;
+  }
+  .stagger-item:nth-child(7) {
+    animation-delay: 0.35s;
+  }
+  .stagger-item:nth-child(8) {
+    animation-delay: 0.4s;
+  }
+}
+
+/* Stronger and faster keyframe animations for youth appeal */
+@keyframes fadeInStrong {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes slideUpStrong {
+  from {
+    opacity: 0;
+    transform: translateY(60px) rotateX(15deg);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes scaleInStrong {
+  from {
+    opacity: 0;
+    transform: scale(0.6) rotateZ(-10deg);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotateZ(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes bounceStrong {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-25px) scale(1.05);
+  }
+}
+
+@keyframes wiggleStrong {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(3deg) scale(1.02);
+  }
+  75% {
+    transform: rotate(-3deg) scale(1.02);
+  }
+}
+
+@keyframes floatStrong {
+  0%,
+  100% {
+    transform: translateY(0px) rotateZ(0deg) scale(1);
+  }
+  33% {
+    transform: translateY(-20px) rotateZ(1deg) scale(1.02);
+  }
+  66% {
+    transform: translateY(-10px) rotateZ(-1deg) scale(1.01);
+  }
+}
+
+@keyframes pulseGlowStrong {
+  0%,
+  100% {
+    box-shadow: 0 0 25px rgba(var(--primary), 0.3), 0 0 50px rgba(var(--primary), 0.1);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(var(--primary), 0.6), 0 0 80px rgba(var(--primary), 0.2);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gradientShiftStrong {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes glowStrong {
+  from {
+    text-shadow: 0 0 15px rgba(var(--primary), 0.4), 0 0 30px rgba(var(--primary), 0.3);
+  }
+  to {
+    text-shadow: 0 0 30px rgba(var(--primary), 0.8), 0 0 50px rgba(var(--primary), 0.6);
+  }
+}
+
+@keyframes morphStrong {
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: rotate(0deg);
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 50%;
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes shimmerStrong {
+  0% {
+    background-position: -300% 0;
+  }
+  100% {
+    background-position: 300% 0;
+  }
+}
+
+@keyframes gradientBgStrong {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseStrong {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Enhanced dark mode transitions with forest green theme */
+.dark,
+.dark *,
+.dark *::before,
+.dark *::after {
+  transition:
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    backdrop-filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ensure dark mode covers entire viewport with forest green background */
+html.dark {
+  background-color: oklch(0.08 0.03 120);
+  min-height: 100vh;
+}
+
+html.dark body {
+  background-color: oklch(0.08 0.03 120);
+  color: oklch(0.98 0.005 85);
+}
+
+/* Arabic text support */
+[dir="rtl"] {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "rlig" 1;
+}
+
+/* Enhanced mobile responsiveness with stronger effects */
+@media (max-width: 768px) {
+  .card-hover:hover {
+    transform: translateY(-12px) scale(1.04);
+  }
+
+  .btn-interactive:hover {
+    transform: scale(1.1);
+  }
+
+  .animate-fade-in {
+    animation-duration: 0.6s;
+  }
+
+  .animate-slide-up {
+    animation-duration: 0.5s;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .card-hover,
+  .btn-interactive {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary: oklch(0.3 0.2 200);
+    --background: oklch(1 0 0);
+    --foreground: oklch(0 0 0);
+  }
+
+  .dark {
+    --primary: oklch(0.8 0.2 200);
+    --background: oklch(0 0 0);
+    --foreground: oklch(1 0 0);
+  }
+}
