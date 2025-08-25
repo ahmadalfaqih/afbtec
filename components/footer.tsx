@@ -57,14 +57,14 @@ export function Footer() {
             <h3 className="text-lg font-semibold">تواصل معنا</h3>
             <div className="space-y-3">
               <a
-                href="tel:+970123456789"
+                href="tel:+962780648871" className="ltr"
                 className="flex items-center space-x-3 space-x-reverse text-sm text-muted-foreground hover:text-primary transition-all duration-300 group hover:translate-x-2"
               >
                 <Phone className="h-4 w-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
                 <span>+962 78 064 8871</span>
               </a>
               <a
-                href="mailto:info@afbtec.com"
+                href="butcahmad@gmail.com"
                 className="flex items-center space-x-3 space-x-reverse text-sm text-muted-foreground hover:text-primary transition-all duration-300 group hover:translate-x-2"
               >
                 <Mail className="h-4 w-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
