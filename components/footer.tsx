@@ -56,13 +56,13 @@ export function Footer() {
           <div className="space-y-4 animate-slide-up" style={{ animationDelay: "0.2s" }}>
             <h3 className="text-lg font-semibold">تواصل معنا</h3>
             <div className="space-y-3">
-              <a
-                href="tel:+962780648871" className="ltr"
-                className="flex items-center space-x-3 space-x-reverse text-sm text-muted-foreground hover:text-primary transition-all duration-300 group hover:translate-x-2"
-              >
-                <Phone className="h-4 w-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
-                <span>+962 78 064 8871</span>
-              </a>
+              <a 
+  href="tel:+962780648871" 
+  className="flex items-center gap-2 text-sm hover:text-primary transition-all duration-300 group hover:translate-x-2"
+>
+  <Phone className="h-4 w-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300" />
+  <span dir="ltr" className="whitespace-nowrap">+962 78 064 8871</span>
+</a>
               <a
                 href="butcahmad@gmail.com"
                 className="flex items-center space-x-3 space-x-reverse text-sm text-muted-foreground hover:text-primary transition-all duration-300 group hover:translate-x-2"
